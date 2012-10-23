@@ -9,43 +9,39 @@
 The examples here are Express and EJS, but the underlying functions are just string
 manipulation and are completely template/framework-agnostic. **:)**
 
-    // Express 3
-    app.locals.bootstrap = require("express-bootstrap-helpers");
-    // Express 2
-    app.helpers("bootstrap", require("express-bootstrap-helpers"));
+```html
+// Express 3
+app.locals.bootstrap = require("bootstrap-helpers");
+// Express 2
+app.helpers("bootstrap", require("bootstrap-helpers"));
 
-    // view.ejs
-    <%- bootstrap.button("Call to Action", {
-        style: "primary",
-        size:  "large"
-    }) %>
-    <button class="btn btn-primary btn-large" type="button">Call to Action</button>
+// view.ejs
+<%- bootstrap.button("Call to Action", {
+    style: "primary",
+    size:  "large"
+}) %>
+<button class="btn btn-primary btn-large" type="button">Call to Action</button>
 
-    <% var container = bootstrap.container({ fluid: true }); %>
-    <%- container.open() %>
-    <div class="container-fluid">
-        <% var row = bootstrap.row({ fluid: true }) %>
-        <%- row.open() %>
-        <div class="row">
-            <% bootstrap.column(4, { tag: "aside" }).render("Sidebar") %>
-            <aside class="span4">Sidebar</aside>
+<%- bootstrap.container({ fluid: true }); %>
+    <%- bootstrap.row({ fluid: true }) %>
+    <div class="row-fluid">
+        <%- bootstrap.col(4, { tag: "aside" }) %>
+        <aside class="span4">
+            Sidebar
+        <%- bootstrap.colEnd("aside") %>
+        </aside>
 
-            <% var content = bootstrap.column(8, { id: "main" }) %>
-            <%- content.open() %>
-            <div id="main" class="span8">
-                <p>Hello World!</p>
-            <%- content.close() %>
-            </div>
-        <%- row.close() %>
+        <%- bootstrap.col(8, { id: "main" }) %>
+        <div class="span8" id="main">
+            <p>Hello World!</p>
+        <%- bootstrap.colEnd() %>
         </div>
-    <%- container.close() %>
+    <%- bootstrap.rowEnd() %>
     </div>
+<%- bootstrap.containerEnd() %>
+</div>
+```
 
 ## Changelog
 
-** 0.0.3 **
- - Adding components
- - Reworking form API some
-
-** 0.0.1 **
- - Initial commit, detailed documentation will be coming in the future, reference the source for now
+**0.0.1** Initial Release
