@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-helpers",
+  "version": "0.0.1",
+  "description": "View helpers for using Twitter Bootstrap components and general markup",
+  "keywords": [
+    "html",
+    "views",
+    "helpers",
+    "twitter",
+    "bootstrap",
+    "express"
+  ],
+  "author": {
+    "name": "Dominic Barnes"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "html-helpers": "*",
+    "lodash": "*"
+  },
+  "devDependencies": {
+    "should": "*"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
