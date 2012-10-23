@@ -23,6 +23,7 @@ app.helpers("bootstrap", require("bootstrap-helpers"));
 <button class="btn btn-primary btn-large" type="button">Call to Action</button>
 
 <%- bootstrap.container({ fluid: true }); %>
+<div class="container-fluid">
     <%- bootstrap.row({ fluid: true }) %>
     <div class="row-fluid">
         <%- bootstrap.col(4, { tag: "aside" }) %>
